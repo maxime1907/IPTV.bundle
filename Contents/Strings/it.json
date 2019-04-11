@@ -1,0 +1,20 @@
+{
+    "All": "Tutti",
+    "Error": "Errore",
+    "No category": "Nessuna categoria",
+    "No description available": "Nessuna descrizione disponibile",
+    "No items were found": "Nessun risultato",
+    "Playlist is reloading in the background, please wait": "La playlist si sta aggiornando in background, aspetta per favore",
+    "Playlist reloaded successfully": "La playlist è stata caricata con successo",
+    "Preferences": "Preferenze",
+    "Program guide is reloading in the background, please wait": "La guida TV si sta aggiornando in background, aspetta per favore",
+    "Program guide reloaded successfully": "La guida TV è stata caricata con successo",
+    "Provided playlist files are invalid, missing or empty, check the log file for more information": "Il file che hai fornito per la playlist è non valido, inestistente o vuoto. Controlla i log per maggiori informazioni",
+    "Provided program guide files are invalid, missing or empty, check the log file for more information": "Il file che hai fornito per la guida TV è non valido, inestistente o vuoto. Controlla i log per maggiori informazioni",
+    "Reload playlist": "Aggiorna la playlist",
+    "Reload program guide": "Aggiorna la guida TV",
+    "Search": "Cerca",
+    "Success": "Fatto!",
+    "View playlist": "Guarda la playlist",
+    "Warning": "Attenzione"
+}
