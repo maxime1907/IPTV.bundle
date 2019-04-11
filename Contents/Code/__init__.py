@@ -17,6 +17,7 @@
 from m3u_parser import LoadPlaylist, PlaylistReloader
 from xmltv_parser import LoadGuide, GuideReloader
 from locale_patch import L, SetAvailableLanguages
+from DumbTools import DumbKeyboard
 import re
 
 NAME = 'IPTV'
@@ -34,7 +35,7 @@ def Start():
     VideoClipObject.thumb = R('icon-tv.png')
     VideoClipObject.art = R('art-default.jpg')
 
-    SetAvailableLanguages({'en', 'fr', 'ru'})
+    SetAvailableLanguages({'en', 'fr', 'ru', 'it'})
     
     # in case something went wrong last run (#122)
     Dict['playlist_loading_in_progress'] = False
@@ -48,7 +49,7 @@ def Start():
 
 ####################################################################################################
 @handler(PREFIX, NAME)
-def MainMenu():
+def MainMenu(**kwargs):
 
     if Prefs['search'] or Prefs['m3u_manual_reload'] or Prefs['xmltv_manual_reload'] or Prefs['preferences']:
         oc = ObjectContainer()
@@ -60,14 +61,20 @@ def MainMenu():
             )
         )
         if Prefs['search']:
-            oc.add(
-                InputDirectoryObject(
-                    key = Callback(ListItems),
-                    title = unicode(L('Search')), 
-                    #prompt = unicode(L('Search')),
-                    thumb = R('icon-search.png')
+            if Client.Product in DumbKeyboard.clients:
+                DumbKeyboard(PREFIX, oc, ListItems,
+                    dktitle = unicode(L('Search')),
+                    dkthumb = R('icon-search.png')
                 )
-            )
+            else:
+                oc.add(
+                    InputDirectoryObject(
+                        key = Callback(ListItems),
+                        title = unicode(L('Search')), 
+                        #prompt = unicode(L('Search')),
+                        thumb = R('icon-search.png')
+                    )
+                )
         if Prefs['m3u_manual_reload']:
             oc.add(
                 DirectoryObject(
@@ -97,7 +104,7 @@ def MainMenu():
 
 ####################################################################################################
 @route(PREFIX + '/listgroups', page = int)
-def ListGroups(page = 1):
+def ListGroups(page = 1, **kwargs):
 
     if not Dict['groups']:
         LoadPlaylist()
@@ -155,7 +162,7 @@ def ListGroups(page = 1):
 
 ####################################################################################################
 @route(PREFIX + '/listitems', page = int)
-def ListItems(group = unicode('All'), query = '', page = 1):
+def ListItems(group = unicode('All'), query = '', page = 1, **kwargs):
 
     if not Dict['streams']:
         LoadPlaylist()
@@ -339,7 +346,7 @@ def PlayVideo(url, c_user_agent = None, c_referer = None):
 
 ####################################################################################################
 @route(PREFIX + '/reloadplaylist')
-def ReloadPlaylist():
+def ReloadPlaylist(**kwargs):
 
     if Dict['playlist_loading_in_progress']:
         return ObjectContainer(
@@ -365,7 +372,7 @@ def ReloadPlaylist():
 
 ####################################################################################################
 @route(PREFIX + '/reloadguide')
-def ReloadGuide():
+def ReloadGuide(**kwargs):
 
     if Dict['guide_loading_in_progress']:
         return ObjectContainer(
