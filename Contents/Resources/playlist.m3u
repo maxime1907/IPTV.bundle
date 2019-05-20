@@ -1,14 +1,30 @@
 #EXTM3U
 
-#EXTINF:0 tvg-id="4",Planeta (rtmp)
-rtmp://planetaonline.cdnvideo.ru/rr/channel_2
-
-#EXTINF:0 tvg-id="6" tvg-name="NDTV" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/NDTV_logo.svg/1280px-NDTV_logo.svg.png" group-title="News",NDTV 480p (http://bitgravity.com)
-http://ndtv.live.cdn.bitgravity.com/ndtv/live/ndtv247live512
-#EXTINF:0 tvg-id="6" tvg-name="NDTV" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/NDTV_logo.svg/1280px-NDTV_logo.svg.png" group-title="News",NDTV 240p (http://bitgravity.com)
-http://bglive-a.bitgravity.com/ndtv/247hi/live/native
-#EXTINF:0 tvg-id="6" tvg-name="NDTV" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/NDTV_logo.svg/1280px-NDTV_logo.svg.png" group-title="News",NDTV 240p (http://indostan.epac.to)
-http://ndtv.indostan.epac.to/ndtv/247lo/live/native
-
-#EXTINF:0 tvg-id="7" tvg-logo="https://upload.wikimedia.org/wikipedia/en/b/b0/Peace_TV_logo_2015.jpeg",Peace TV Asia (rtmp)
-rtmp://peace.fms.visionip.tv/live/b2b-peace_asia-live-25f-4x3-sdh_1
+#EXTINF:-1,TF1
+http://163.172.43.207:8081/tf1/live/playlist.m3u8
+#EXTINF:-1,France 2
+http://163.172.43.207:8081/france2/live/playlist.m3u8
+#EXTINF:-1,France 3
+http://163.172.43.207:8081/france3/live/playlist.m3u8
+#EXTINF:-1,France 4
+http://163.172.43.207:8081/france4/live/playlist.m3u8
+#EXTINF:-1,France 5
+http://163.172.43.207:8081/france5/live/playlist.m3u8
+#EXTINF:-1,M6
+http://163.172.43.207:8081/m6/live/playlist.m3u8
+#EXTINF:-1,Arte
+http://163.172.43.207:8081/arte/live/playlist.m3u8
+#EXTINF:-1,C8
+http://163.172.43.207:8081/c8/live/playlist.m3u8
+#EXTINF:-1,W9
+http://163.172.43.207:8081/w9/live/playlist.m3u8
+#EXTINF:-1,TMC
+http://163.172.43.207:8081/tmc/live/playlist.m3u8
+#EXTINF:-1,NT1
+http://163.172.43.207:8081/nt1/live/playlist.m3u8
+#EXTINF:-1,NRJ12
+http://163.172.43.207:8081/nrj12/live/playlist.m3u8
+#EXTINF:-1,6ter
+http://163.172.43.207:8081/6ter/live/playlist.m3u8
+#EXTINF:-1,HD1
+http://163.172.43.207:8081/hd1/live/playlist.m3u8
